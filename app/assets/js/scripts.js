@@ -6,14 +6,17 @@
  * @version 1.0.5
  * Copyright 2017. MIT licensed.
  */
+'use strict';
+
 (function ($, window, document, undefined) {
 
   'use strict';
 
   $(function () {
-    // FastShell
     console.log($(window).width());
-    
-});
-
+    var t = [1, 2, 3, 4];
+    t.map(function (d) {
+      console.log('number is ' + d);
+    });
+  });
 })(jQuery, window, document);

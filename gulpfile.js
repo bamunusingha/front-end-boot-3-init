@@ -9,7 +9,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     cssnano = require('gulp-cssnano'),
     sourcemaps = require('gulp-sourcemaps'),
-    package = require('./package.json');
+    package = require('./package.json'),
+    babel = require('gulp-babel');
 
 
 var banner = [
@@ -40,6 +41,7 @@ gulp.task('css', function () {
 
 gulp.task('js',function(){
   gulp.src('src/js/scripts.js')
+    .pipe(babel())
     .pipe(sourcemaps.init())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
